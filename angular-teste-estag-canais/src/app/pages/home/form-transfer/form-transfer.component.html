@@ -1,0 +1,75 @@
+<div class="view">
+  <div class="modal" *ngIf="!progressTransfer" [ngClass]="{'error': error}">
+    <img src="../../../../assets/image/close.svg" alt="Fechar modal" (click)="onCloseModal()">
+    <h2>Quais os dados da conta?</h2>
+    <form (submit)="onProgressTransfer()" [formGroup]="form">
+      <div class="form-inputs-conta">
+        <div class="input-agencia">
+          
+          <h3>agência</h3>
+          <input type="text" name="agencia" #agency placeholder="0000" formControlName="beneficiaryAgency" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="4">
+          <p id="warn-password" *ngIf=" agency.value.length > 0 && form.get('beneficiaryAgency')?.invalid" >Preencha o campo agência</p>
+          <aside align="end">{{agency.value.length}} / 4</aside>
+
+        </div>
+        <div class="input-conta">
+
+          <h3>conta</h3>
+          <input type="text" name="conta" #account placeholder="00000" formControlName="beneficiaryAccount" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="5">
+          <p id="warn-password" *ngIf=" account.value.length > 0 && form.get('beneficiaryAccount')?.invalid" >Preencha o campo conta</p>
+          <aside align="end">{{account.value.length}} / 5</aside>
+
+        </div>
+        <div class="input-digito">
+
+          <h3>dígito</h3>
+          <input type="text" name="digito" #digito placeholder="0" formControlName="digito"
+          onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="1">
+          <p id="warn-password" *ngIf=" digito.value.length > 0 && form.get('digito')?.invalid" >Preencha o campo dígito</p>
+          <aside align="end">{{digito.value.length}} / 1</aside>
+
+        </div>
+      </div>
+      <div class="input-valor">
+
+        <h3>qual valor deseja transferir?</h3>
+        <span>R$</span>
+        <input type="text"  name="valor" #value placeholder="0.00" formControlName="value"  min=1
+        (input)="formatCoin()" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="10"/>
+        <p>saldo em conta</p><p class="saldo">{{ saldo | currency: 'R$ '}}</p>
+        <aside id="warn-password" *ngIf="checkSaldo()">Saldo insuficiente</aside>
+
+      </div>
+      <div class="input-type">
+
+        <h3>tipo de transferência</h3>
+        <select name="type" formControlName="type">
+          <option value="pix">Pix</option>
+          <option value="ted">Ted</option>
+          <option value="doc">Doc</option>
+        </select>
+
+      </div>
+      <button type="submit">Continuar</button>
+    </form>
+  </div>
+  <div class="modal" *ngIf="progressTransfer">
+    <img src="../../../../assets/image/close.svg" alt="Fechar modal" (click)="onCloseModal()">
+    <h2>Digite a sua senha para realizar a transferência.</h2>
+    <form (submit)="transferBank()" [formGroup]="form">
+      <div class="form-inputs-conta">
+        <div class="input-conta">
+
+          <h3>senha</h3>
+          <input type="password" name="conta" placeholder="Senha" formControlName="password">
+          <p id="warn-password" *ngIf="form.controls.password.value.length > 0 && form.controls.password.invalid">A Senha deve conter no minimo 8 caraceteres sendo eles maiúsculos, minúsculos, caraceteres especiais e números.</p>
+
+        </div>
+        <div class="box-confirmation">
+          <button type="submit" id="confirmation">Confirmar</button>
+        </div>
+      </div>
+   </form>
+  </div>
+
+</div>

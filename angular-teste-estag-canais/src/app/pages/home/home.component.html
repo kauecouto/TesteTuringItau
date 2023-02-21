@@ -1,0 +1,47 @@
+<app-form-transfer *ngIf="isALiveFormTransfer" [typeTransfer]="typeTransfer" (closeModal)="controlModal()" [saldo]="user.saldo" [email]="user.email"></app-form-transfer>
+<app-header></app-header>
+
+<div class="loading" *ngIf="!user">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div class="container" *ngIf="user">
+  <div class="container-left">
+    <div class="content-home" *ngIf="!isALiveExtract">
+      <div class="welcome">
+        <p>Olá,</p>
+        <h1>{{user.name}}</h1>
+      </div>
+      <div class="data-cont">
+        <h3 *ngIf="hiddenAccount">ag {{user.agency}}</h3>
+        <h3 *ngIf="hiddenAccount">c/c {{user.account}}</h3>
+        <div *ngIf="!hiddenAccount" class="hidden"></div>
+        <img *ngIf="hiddenAccount" src="../../../../assets/image/eye.svg" alt="visualizar saldo" (click)="controlHiddenBalance()">
+        <img *ngIf="!hiddenAccount" src="../../../assets/image/eye-off.svg" alt="visualizar saldo" (click)="controlHiddenBalance()">
+      </div>
+      <app-balance-panel [saldo]="user.saldo" (extract)="controlExtract()"></app-balance-panel>
+    </div>
+    <div class="content-extract" *ngIf="isALiveExtract" >
+      <div class="header-extract" >
+        <img src="../../../assets/image/arrow.svg" alt="voltar" (click)="controlExtract()">
+        <h1>Meu extrato</h1>
+      </div>
+      <div class="extract">
+        <app-card-extract *ngFor="let extract of user.transfers" [extract]="extract"></app-card-extract>
+      </div>
+    </div>
+
+  </div>
+  <div class="container-rigth">
+    <div class="box-content">
+      <div class="data-cont">
+        <h3 *ngIf="hiddenAccount">ag {{user.agency}}</h3>
+        <h3 *ngIf="hiddenAccount">c/c {{user.account}}</h3>
+        <div *ngIf="!hiddenAccount" class="hidden"></div>
+        <img *ngIf="hiddenAccount" src="../../../../assets/image/eye.svg" alt="visualizar saldo" (click)="controlHiddenBalance()">
+        <img *ngIf="!hiddenAccount" src="../../../assets/image/eye-off.svg" alt="visualizar saldo" (click)="controlHiddenBalance()">
+      </div>
+      <app-transfer-panel (typeTransfer)="controlModal($event)"></app-transfer-panel>
+    </div>
+  </div>
+</div>

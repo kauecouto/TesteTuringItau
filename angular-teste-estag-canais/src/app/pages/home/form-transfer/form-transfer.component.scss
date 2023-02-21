@@ -1,0 +1,232 @@
+.view{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.326);
+  position: fixed;
+  z-index: 99999;
+  padding: 20px;
+  .modal{
+    position: relative;
+    background-color: var(--white);
+    max-width: 950px;
+    width: 100%;
+    padding: 50px;
+    border-radius: 30px;
+    img{
+      cursor: pointer;
+      width: 26px;
+      position: absolute;
+      right: 30px;
+      top: 30px;
+    }
+
+    .form-inputs-conta{
+      display: flex;
+      margin-top: 10px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .input-agencia{
+          margin-top: 10px;
+        input{
+          max-width: 210px;
+          width: 100%;
+          height: 60px;
+          font-size: 20px;
+          border-radius: 6px;
+          border: 1px solid #979797;
+          padding: 0 10px;
+          margin-top: 10px;
+          margin-bottom: 5px;
+        }
+      }
+      .input-conta{
+        margin-top: 10px;
+        input{
+          max-width: 302px;
+          width: 100%;
+          height: 60px;
+          font-size: 20px;
+          border-radius: 6px;
+          border: 1px solid #979797;
+          padding: 0 10px;
+          margin-top: 10px;
+          margin-bottom: 5px;
+        }
+      }
+      .input-digito{
+        margin-top: 10px;
+        input{
+          max-width: 212px;
+          width: 100%;
+          height: 60px;
+          font-size: 20px;
+          border-radius: 6px;
+          border: 1px solid #979797;
+          padding: 0 10px;
+          margin-top: 10px;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    .input-valor{
+      position: relative;
+        margin-top: 20px;
+        span{
+          font-weight: 600;
+          position: absolute;
+          font-size: 20px;
+          top: 58px;
+          left: 10px;
+        }
+        input{
+          width: 100%;
+          height: 60px;
+          font-size: 20px;
+          border-radius: 6px;
+          border: 1px solid #979797;
+          padding: 0 40px;
+          margin-top: 10px;
+        }
+        p{
+          display: inline-block;
+          padding: 8px 0;
+        }
+        .saldo{
+          font-weight: 700;
+          padding-left: 5px;
+          color: rgb(59, 143, 29);
+
+        }
+    }
+
+    .input-type{
+      margin-top: 20px;
+      select{
+        width: 25%;
+        height: 60px;
+        font-size: 20px;
+        border-radius: 6px;
+        border: 1px solid #979797;
+        padding: 0 10px;
+        margin-top: 10px;
+      }
+    }
+
+    button{
+      color: var(--white);
+      background-color: var(--orange);
+      max-width: 180px;
+      width: 100%;
+      height: 55px;
+      border: 1px solid #979797;
+      border-radius: 4px;
+      font-size: 20px;
+      font-weight: 700;
+      float: right;
+    }
+    .box-confirmation{
+      width: 100%;
+      #confirmation{
+        margin-top: 10px;
+        float: right;
+      }
+    }
+  }
+
+  #warn-password{
+    margin: 10px 0;
+    color: red;
+  }
+
+
+}
+
+
+
+h2{
+  font-size: 33px;
+}
+
+h3{
+  font-size: 26px;
+  font-weight: 500;
+}
+
+@media(max-width: 768px){
+  h2{
+    font-size: 28px;
+  }
+  h3{
+    font-size: 20px;
+  }
+  input{
+    height: 35px !important;
+  }
+  select{
+    height: 35px !important;
+    width: 40% !important;
+  }
+  span{
+    top: 40px !important;
+  }
+
+}
+
+@media(max-width: 500px){
+  h2{
+    font-size: 25px;
+    padding-right: 25px ;
+  }
+  img{
+    width: 20px !important;
+  }
+  button{
+    max-width: none !important;
+    width: 100% !important;
+    height: 40px !important;
+    font-size: 20px !important;
+    float: none !important;
+    margin-top: 10px !important;
+  }
+  span{
+    top: 40px !important;
+  }
+}
+
+@media(max-width: 400px){
+  .modal{
+    padding: 25px !important;
+  }
+  span{
+    top: 39px !important;
+  }
+  aside{
+    display: none;
+  }
+}
+
+@media(max-height: 700px){
+  h2{
+    font-size: 15px;
+    padding-right: 25px ;
+  }
+  h3{
+    font-size: 10px !important;
+  }
+  .input-valor, .input-type{
+    margin-top: 5px !important;
+  }
+  .modal{
+    padding: 25px !important;
+  }
+  span{
+    top: 29px !important;
+  }
+  aside{
+    display: none;
+  }
+}

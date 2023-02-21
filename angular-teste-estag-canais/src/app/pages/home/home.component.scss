@@ -1,0 +1,279 @@
+.container{
+  height: 102vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &-left{
+    background-color: var(--orange);
+    .content-extract{
+      margin: 20px;
+      background-color: var(--orange-300);
+      height: 600px;
+      margin-top: 130px;
+      border-radius: 30px;
+      padding: 10px 20px;
+      .header-extract{
+        margin-top: 20px;
+        display: flex;
+        color: white;
+        img{
+          margin-right: 20px;
+        }
+      }
+      .extract{
+        display: flex;
+        flex-direction: column-reverse;
+        max-height: 500px;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: var(--orange-300);
+        padding: 10px;
+        overflow: auto;
+        &::-webkit-scrollbar{
+          background-color: var(--orange-300);
+        }
+      }
+      img{
+        width: 35px;
+        transform: rotate(180deg);
+        cursor: pointer;
+      }
+    }
+    .content-home{
+      height: 580px;
+      margin-top: 90px;
+      padding: 40px;
+      .welcome{
+        padding: 20px;
+        padding-top: 0px;
+        p{
+          font-size: 25px;
+          font-weight: 500;
+          color: var(--blue);
+        }
+        h1{
+          color: var(--white);
+        }
+      }
+      .data-cont{
+        display: none;
+        padding: 40px;
+        margin-bottom: 10px;
+        border-radius: 12px;
+        width: 100%;
+        color: var(--white);
+        background-color: var(--blue);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        .hidden{
+          border-radius: 10px;
+          width: 50%;
+          animation-name: hiddenAccount;
+          animation-duration: 0.5s;
+          animation-fill-mode: forwards;
+        }
+        img{
+          margin-left: 15px;
+          width: 37px;
+          cursor: pointer;
+        }
+        h3{
+          font-size: 25px;
+          opacity: 0.5;
+          transition: 1s;
+          animation-name: visible;
+          animation-duration: 0.5s;
+          animation-fill-mode: forwards;
+        }
+        h3:first-child{
+          margin-left: 20px;
+          margin-right: 100px;
+          animation-name: visibleAccount;
+          animation-duration: 0.5s;
+          animation-fill-mode: forwards;
+
+        }
+      }
+
+    }
+  }
+
+  &-rigth{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 0;
+
+
+    .box-content{
+      max-height: 610px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .data-cont{
+      display: flex;
+      padding: 40px;
+      border-radius: 12px;
+      width: 100%;
+      color: var(--white);
+      background-color: var(--blue);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      .hidden{
+        border-radius: 10px;
+        width: 50%;
+        animation-name: hiddenAccount;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+      }
+      img{
+        margin-left: 15px;
+        width: 37px;
+        cursor: pointer;
+      }
+      h3{
+        font-size: 25px;
+        opacity: 0.5;
+        transition: 1s;
+        animation-name: visible;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+      }
+      h3:first-child{
+        margin-left: 20px;
+        margin-right: 100px;
+        animation-name: visibleAccount;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+
+      }
+    }
+  }
+}
+
+.loading{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.481);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    align-items: center;
+}
+
+@media(max-width: 1200px){
+  .container{
+    height: 140vh;
+    display: flex;
+    flex-direction: column;
+
+    &-left{
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      height: 730px;
+      .content-home{
+        height: 90%;
+        .data-cont{
+          display: flex;
+        }
+      }
+    }
+    &-rigth{
+      margin-top: 0;
+      .box-content{
+        margin-top: 30px;
+        justify-content: start;
+      }
+      .data-cont{
+        display: none;
+      }
+    }
+  }
+}
+
+@media(max-width: 768px){
+
+  .container-left{
+    height: 600px;
+    .content-extract{
+      height: 500px;
+      margin-top: 80px;
+      padding: 5px 10px;
+      .extract{
+        padding: 5px;
+        max-height: 400px;
+      }
+      img{
+        width: 35px;
+        transform: rotate(180deg);
+      }
+    }
+    .content-home{
+      height: 85%;
+      margin-top: 70px;
+      padding: 25px;
+
+      .data-cont {
+        padding: 20px;
+        h3{
+          font-size: 15px;
+        }
+
+      }
+
+      .welcome{
+        padding: 10px;
+        p{
+          font-size: 20px;
+          margin-top: 10px;
+        }
+        h1{
+          font-size: 25px;
+        }
+      }
+    }
+  }
+  img{
+    width: 30px !important;
+  }
+}
+
+@media(max-width: 400px){
+  .container-left{
+    .content-extract{
+      height: 500px;
+      margin-top: 80px;
+      .extract{
+        max-height: 400px;
+      }
+      img{
+        width: 35px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+@keyframes hiddenAccount{
+  to{
+    background-color: rgba(255, 255, 255, 0.777);
+    width: 60%;
+  }
+}
+
+@keyframes visibleAccount{
+  to{
+    opacity: 1;
+    margin-left: 0px;
+    margin-right: 50px;
+  }
+}
+
+@keyframes visible{
+  to{
+    opacity: 1;
+  }
+}

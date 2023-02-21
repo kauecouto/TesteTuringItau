@@ -1,0 +1,22 @@
+<section class="container">
+  <div class="container-form">
+    <h1>Crie sua conta</h1>
+    <form (submit)="createUser()">
+      <app-input title="Nome" image="../../../assets/image/person.png" type="text" placeholder="Nome" (text)="setName($event)"></app-input>
+      <p *ngIf="form.controls.name.invalid && form.controls.name.value.length > 0">Preencha o campo nome!</p>
+      <app-input title="Email" image="../../../assets/image/email.png" type="text" placeholder="Email" (text)="setEmail($event)" ></app-input>
+      <p *ngIf="form.controls.email.invalid && form.controls.email.value.length > 5" >Preecha com um email valido!</p>
+      <app-input title="Senha" image="../../../assets/image/lock.png" type="password" placeholder="Senha" (text)="setPassword($event)"></app-input>
+      <p *ngIf="form.controls.password.invalid && form.controls.password.value.length > 0" >A Senha deve conter no minimo 8 caraceteres sendo eles maiúsculos, minúsculos, caraceteres especiais e números.</p>
+      <p *ngIf="!isValid" Style="text-align: center">Preencha os campos corretamente!.</p>
+      <button type="submit">acessar</button>
+      <p class="text-action">Já possui conta? <span routerLink="/login">Entre agora!</span></p>
+    </form>
+  </div>
+  <div class="container-illustration">
+    <img src="../../../assets/image/illustration.svg" alt="ilustração">
+  </div>
+</section>
+
+
+

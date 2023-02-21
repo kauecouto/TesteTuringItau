@@ -1,0 +1,17 @@
+<div class="card-extract" *ngIf="extract">
+  <h2 class="valueTransfer" [ngStyle]="{'color': extract.operation == 'Crédito' ? 'green' : 'red'}">
+    <span
+    *ngIf="extract.operation == 'Débito'"
+    >-</span> {{extract.value | currency : 'R$ '}}</h2>
+  <div class="content">
+    <div class="box-type-transfer">
+      <img src="../../../../assets/image/transfer-up.svg" alt="transferência créditada" *ngIf="extract.operation == 'Crédito'">
+      <img src="../../../../assets/image/transfer-dow.svg" alt="transferência debitada" *ngIf="extract.operation == 'Débito'">
+      <p>{{extract.type}}</p>
+    </div>
+    <div class="info">
+      <p class="dateTransfer">{{extract.date}}</p>
+      <p class="hourTransfer">{{extract.hour}}</p>
+    </div>
+  </div>
+</div>

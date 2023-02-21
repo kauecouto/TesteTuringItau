@@ -1,0 +1,13 @@
+
+<div>
+  <span class="example-pizza-party">
+    <div>
+      <mat-icon *ngIf="data.saldo_emissor" style="color:rgb(0, 200, 0); margin: 0 5px" fontIcon="check_circle"></mat-icon>
+      <mat-icon *ngIf="!data.saldo_emissor" style="color:rgb(200, 0, 0); margin: 0 2px" fontIcon="error_circle_rounded"></mat-icon>
+      {{data.message}}
+    </div>
+
+    <p *ngIf="data.saldo_emissor">saldo emissor: {{data.saldo_emissor}}</p>
+    <p *ngIf="data.saldo_receptor" >saldo receptor: {{data.saldo_receptor}}</p>
+  </span>
+</div>
