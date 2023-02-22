@@ -52,7 +52,7 @@
       "password": "Teste@123",
       "agency": "0000",
       "account": "00000-0",
-      "saldo": 20,
+      "saldo": 30,
       "transfers" : []
   },
   ❌ status: 400,
@@ -80,7 +80,7 @@
       "password": "Teste@123",
       "agency": "0000",
       "account": "00000-0",
-      "saldo": 20,
+      "saldo": 30,
       "transfers" : []
   },
   ❌ status: 400,
