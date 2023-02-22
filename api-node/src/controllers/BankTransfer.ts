@@ -63,7 +63,9 @@ class BankTransfer {
             db.users[Number(beneficiaryUser.id) - 1] = bankTransferService.createRecordTransfer(beneficiaryUser,body,date,'Crédito')
             
             return res.status(201).json({
-                
+                "message": "Sua transferência foi realizada com sucesso!",
+                "saldo_emissor": `R$ ${user.saldo.toFixed(2)}`,
+                "saldo_receptor": `R$ ${beneficiaryUser.saldo.toFixed(2)}`
             })
         }
     }    

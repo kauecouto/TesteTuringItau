@@ -44,26 +44,35 @@ describe('BankTransfer', () => {
             "type": 'pix'
         }
     })
-    afterEach(() => {
+    afterAll(() => {
         db.users = [
-            {
+            { 
                 "id": "1",
-                "name": "Test Test",
-                "email" : "test@test.com",
-                "password": "Teste@123",
-                "agency": "0000",
-                "account": "00000-0",
-                "saldo": 20000,
-                "transfers" : []
+                "name": "Kauê Couto",
+                "email" : "kauecouto@gmail.com",
+                "password": "Senha@123",
+                "agency": "2255",
+                "account": "11233-2",
+                "saldo": 50000.00,
+                "transfers" : [
+                    {
+                        "id": "1",
+                        "value": 50000.00,
+                        "date": "14/02/2023",
+                        "hour": "14:20:06",
+                        "type": "pix",
+                        "operation": "Crédito"
+                    }
+                ]
             },
-            {
+            { 
                 "id": "2",
-                "name": "Testing",
-                "email" : "testing@test.com",
-                "password": "Teste@123",
-                "agency": "1111",
-                "account": "11111-1",
-                "saldo": 0,
+                "name": "Isabella Ferro",
+                "email" : "isabellaferro@gmail.com",
+                "password": "Senha@123",
+                "agency": "1122",
+                "account": "22333-5",
+                "saldo": 0.00,
                 "transfers" : []
             }
         ]
