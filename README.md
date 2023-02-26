@@ -39,6 +39,10 @@
 
 # 📑 Como Posso Rodar a Aplicacao?
 
+<h3 style='color: orange'>Deploy:</h3>
+disponibilizado em: https://test-estag-canais.netlify.app
+
+<br/>
 <h3 style='color: orange'>Executar o projeto e acessar ambiente de desenvolvimento:</h3>
 <br/>
 <h2>Front-end</h2>

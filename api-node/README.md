@@ -111,15 +111,15 @@
   },
   ❌ status: 400,
   body: { 
-    "message": "Sua transferência não foi completada pois, não é possivel realizar uma transferência para a sua própria conta." 
+    "message": "Sua transferência não foi completada, pois não é possivel realizar uma transferência para a sua própria conta." 
   },
 
   body: { 
-    "message": "Sua transferência não foi completada pois a senha informada está incorreta." 
+    "message": "Sua transferência não foi completada, pois a senha informada está incorreta." 
   },
 
   body: { 
-    "message": "Sua transferência não foi completada pois a agencia e conta informada não existem."
+    "message": "Sua transferência não foi completada, pois a agencia e conta informada não existem."
   },
 
   body: { 
@@ -165,7 +165,10 @@
 </pre>
 
 # 📑 Como Posso Rodar a Aplicacao?
+<h3 style='color: orange'>Deploy:</h3>
+disponibilizado em: https://api-node-opal.vercel.app
 
+<br/>
 <h3 style='color: orange'>Executar o projeto e acessar ambiente de desenvolvimento:</h3>
 <br/>
 <p>Executar aplicação</p>

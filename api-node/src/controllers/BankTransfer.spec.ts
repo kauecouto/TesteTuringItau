@@ -127,7 +127,7 @@ describe('BankTransfer', () => {
         const response = await request(app).post("/transfer").send(mockTransfer)
         expect(response.status).toEqual(400)
         expect(response.body).toEqual({
-            message: "Sua transferência não foi completada pois, não é possivel realizar uma transferência para a sua própria conta."
+            message: "Sua transferência não foi completada, pois não é possivel realizar uma transferência para a sua própria conta."
         })
     })
 
@@ -138,7 +138,7 @@ describe('BankTransfer', () => {
         const response = await request(app).post("/transfer").send(mockTransfer)
         expect(response.status).toEqual(400)
         expect(response.body).toEqual({
-            message: "Sua transferência não foi completada pois a senha informada está incorreta."
+            message: "Sua transferência não foi completada, pois a senha informada está incorreta."
         })
     })
 
@@ -150,7 +150,7 @@ describe('BankTransfer', () => {
         const response = await request(app).post("/transfer").send(mockTransfer)
         expect(response.status).toEqual(400)
         expect(response.body).toEqual({
-            message: "Sua transferência não foi completada pois a agencia e conta informada não existem."
+            message: "Sua transferência não foi completada, pois a agencia e conta informada não existem."
         })
     })
 

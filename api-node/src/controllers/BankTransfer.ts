@@ -36,12 +36,12 @@ class BankTransfer {
 
         if(bankTransferService.validTransfer(usersAuthenticated, body)){
             return res.status(400).json({
-                message: "Sua transferência não foi completada pois, não é possivel realizar uma transferência para a sua própria conta."
+                message: "Sua transferência não foi completada, pois não é possivel realizar uma transferência para a sua própria conta."
             })
         }
         if(bankTransferService.validTransfer(usersAuthenticated, body) == false){
             return res.status(400).json({
-                message: "Sua transferência não foi completada pois a senha informada está incorreta."
+                message: "Sua transferência não foi completada, pois a senha informada está incorreta."
             })
         }
 
@@ -50,7 +50,7 @@ class BankTransfer {
             beneficiaryUser = checkAccount[0]
         }else{
             return res.status(400).json({
-                message: "Sua transferência não foi completada pois a agencia e conta informada não existem."
+                message: "Sua transferência não foi completada, pois a agencia e conta informada não existem."
             })
         }
 
