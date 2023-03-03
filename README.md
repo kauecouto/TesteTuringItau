@@ -1,6 +1,8 @@
-<h1>Teste-Estágio-Canais</h1>
+<h1>Teste Turing Itaú</h1>
 
 ![image](./angular-teste-estag-canais/src/assets/image/preview.png)
+
+</br>
 
 # 📌 Tópicos
 
