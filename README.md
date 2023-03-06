@@ -24,7 +24,7 @@
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 - [TypeScript](https://www.typescriptlang.org)
-- [AngularV14](https://angular.io/)
+- [AngularV15](https://angular.io/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Node](https://nodejs.org/en/)
 - [Zod](https://zod.dev/)
